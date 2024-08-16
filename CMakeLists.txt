@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.26)
+project(ShipmentDiscountCalculation)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(SOURCE_FILES main.cpp)
+add_executable(ShipmentDiscountCalculation_run ${SOURCE_FILES})
+
+include_directories(ShipmentDiscountCalculation_lib)
+add_subdirectory(ShipmentDiscountCalculation_lib)
+
+target_link_libraries(ShipmentDiscountCalculation_run ShipmentDiscountCalculation_lib)
+
+add_subdirectory(UnitTests)
